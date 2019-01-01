@@ -1,3 +1,20 @@
-<p>
-  home works!
-</p>
+<h1 [class.grey]="h1Style">Home : grey class</h1>
+<!--class binding for a single element (functions the same as div?)-->
+
+<h1 [ngClass]="{
+'grey': h1Style,
+'large': !h1Style
+    }">Home : ngClass gray and large</h1>
+<!--ngClass is used when wanting to style multiple elements -->
+
+<h1 [style.color]="h1Style ? 'gray' : 'black'">boolean inline styling</h1>
+
+<h1 [ngStyle]="{
+'color' : h1Style ? 'gray' : 'black',
+'size' : !h1Style ? '5px' : '15px'
+}">ngStyle using multiple boolean choices</h1>
+
+<div class="buttons">
+  <button (click)="firstClick()">first button</button>
+  <button (click)="secondClick()">second button</button>
+</div>
