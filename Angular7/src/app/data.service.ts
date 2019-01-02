@@ -12,3 +12,5 @@ export class DataService {
     return this.http.get('https://reqres.in/api/users');
   }
 }
+
+//This class basically connects to our backend end points / Interoperability layer / controller class

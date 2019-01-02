@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   secondClick() {
       this.h1Style = true;
+      console.log('text on page should change');
     }
 
 

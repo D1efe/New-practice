@@ -1,9 +1,40 @@
 <p>
   contact works!
 </p>
-<ul *ngIf="users">
-  <li *ngFor="let user of users.data">
-    <img [src]="user.avatar">
-    <p>{{ user.first_name }} {{ user.last_name}}</p>
-  </li>
-</ul>
+<h1>Contact Us</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+  <h5 *ngIf="success">Your form is valid</h5>
+  <label>
+    name:
+    <input type="text" formControlName="name">
+    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+      <div *ngIf="messageForm.controls.name.errors.required">name is required</div>
+    </div>
+  </label>
+
+  <label>
+    message:
+    <textarea formControlName="message"></textarea>
+    <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+      <div *ngIf="messageForm.controls.message.errors.required">message is required</div>
+    </div>
+  </label>
+
+  <input type="submit" value="send message" class="cta">
+
+</form>
+
+<div *ngIf="submitted" class="results">
+  <strong>Name:</strong>
+  <span>{{ messageForm.controls.name.value }}</span>
+
+  <strong>Message:</strong>
+  <span>{{ messageForm.controls.message.value }}</span>
+</div>
+
+<!--formGroup looks for the form that we created in the ts file-->
+<!--ngSubmit looks for the submit method which was also created in the ts file-->
+<!--ngIf on line 8 only displays if the success attribute from the ts file is true-->
+<!--the-->
