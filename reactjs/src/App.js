@@ -4,6 +4,9 @@ import './App.css';
 
 import InitialMessageNormal from './components/InitialMessageNormal';
 import InitialMessageEC6 from './components/InitialMessageEC6';
+import SimpleFormES6 from './components/SimpleFormES6';
+import NotSoSimpleForm from './components/NotSoSimpleForm';
+
 
 /*class App extends Component {
   render() {
@@ -46,8 +49,6 @@ const App = () => (
     <div className="App">
       <header className="App-header">
         <div>
-
-
           <InitialMessageNormal myName="Efe"/>
           <InitialMessageEC6 myName="Efe"/>
         </div>
@@ -55,6 +56,12 @@ const App = () => (
         <p>Edit <code>src/App.js</code> and save to reload.</p>
         <a className="App-link" href="https://reactjs.org"
            target="_blank" rel="noopener noreferrer">Learn React</a>
+          <div>
+              <SimpleFormES6 SimpleFormES6/>
+              <br/>
+              <NotSoSimpleForm NotSoSimpleForm/>
+
+          </div>
       </header>
     </div>
   );
